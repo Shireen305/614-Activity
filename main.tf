@@ -11,7 +11,7 @@ resource "aws_instance" "my_server" {
    instance_type = var.instance_type
    key_name      = "${local.aws_key}"                  
    user_data = file("wp_install.sh")
-   security_groups = [aws_security_group.ec2_sg]
+   security_groups = [aws_security_group.ec2_sg.name]
    tags = {
      Name = "my ec2"
    }                  
